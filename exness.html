@@ -727,7 +727,7 @@
                     <div class="instruction-item">
                         <div class="instruction-number">5</div>
                         <div class="instruction-content">
-                            <p>เมื่อย้ายสำเร็จแล้ว กลับมาที่หน้านี้และกรอกเลขบัญชีเพื่อเชื่อมต่อกับระบบ <span class="highlight">ZAB Expert Advisor</span></p>
+                            <p>เมื่อย้ายสำเร็จแล้ว <span class="highlight">แจ้งเลขบัญชี MT5 มาที่แฟนเพจ</span> เพื่อลงทะเบียนรับ Rebate</p>
                         </div>
                     </div>
                 </div>
@@ -755,8 +755,7 @@
                 <div class="step-header">
                     <div class="step-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M12 6v6l4 2"/>
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                         </svg>
                     </div>
                     <div>
@@ -764,27 +763,28 @@
                     </div>
                 </div>
                 <p class="step-description">
-                    หลังจากย้ายพาร์ทเนอร์สำเร็จแล้ว กรุณากรอกรายละเอียดเพื่อเชื่อมต่อกับระบบ
+                    หลังจากย้ายพาร์ทเนอร์สำเร็จแล้ว แจ้งเลขบัญชี MT5 มาที่แฟนเพจเพื่อลงทะเบียนรับ Rebate
                 </p>
 
-                <form id="accountForm">
-                    <div class="form-group">
-                        <label class="form-label">หมายเลขบัญชีเทรด Exness</label>
-                        <input type="text" class="form-input" id="accountNumber" placeholder="พิมพ์เลขบัญชีที่นี่" required>
+                <!-- Contact Box -->
+                <div style="text-align: center; padding: 2rem; background: rgba(255, 196, 0, 0.05); border-radius: 16px; border: 1px solid rgba(255, 196, 0, 0.2);">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #ffc400, #ffab00); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="#0d0d0d">
+                            <path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.627 0 12-4.974 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/>
+                        </svg>
                     </div>
-
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="termsCheckbox" required>
-                        <label class="checkbox-label" for="termsCheckbox">
-                            ฉันได้อ่าน เข้าใจ และยอมรับ <a href="#">ข้อกำหนดและเงื่อนไข</a>
-                        </label>
-                    </div>
-
-                    <button type="submit" class="submit-btn" id="submitBtn" disabled>ยืนยันลงทะเบียน</button>
-                </form>
+                    <h3 style="color: #ffc400; font-size: 1.25rem; margin-bottom: 0.75rem;">แจ้งเลขบัญชี MT5 ที่แฟนเพจ</h3>
+                    <p style="color: #a0a0a0; margin-bottom: 1.5rem;">ทักแชทมาพร้อมแจ้งเลขบัญชี MT5 ของคุณ<br>เพื่อลงทะเบียนรับ Rebate</p>
+                    <a href="https://m.me/ZabEaForex" target="_blank" class="submit-btn" style="display: inline-block; text-decoration: none; padding: 1rem 2.5rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 0.5rem;">
+                            <path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.627 0 12-4.974 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/>
+                        </svg>
+                        ทักแชทเพจ
+                    </a>
+                </div>
 
                 <!-- Partner Info -->
-                <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255, 196, 0, 0.05); border-radius: 12px; border: 1px solid rgba(255, 196, 0, 0.2);">
+                <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255, 255, 255, 0.03); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
                     <h4 style="color: #ffc400; margin-bottom: 1rem;">ข้อมูลพาร์ทเนอร์</h4>
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
                         <span style="color: #a0a0a0;">Partner Code:</span>
@@ -845,44 +845,6 @@
             });
         }
 
-        // Form validation
-        const accountInput = document.getElementById('accountNumber');
-        const termsCheckbox = document.getElementById('termsCheckbox');
-        const submitBtn = document.getElementById('submitBtn');
-
-        function validateForm() {
-            const isValid = accountInput.value.trim() !== '' && termsCheckbox.checked;
-            submitBtn.disabled = !isValid;
-        }
-
-        accountInput.addEventListener('input', validateForm);
-        termsCheckbox.addEventListener('change', validateForm);
-
-        // Form submission
-        document.getElementById('accountForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const accountNumber = accountInput.value.trim();
-
-            // Show success message
-            const toast = document.getElementById('toast');
-            toast.textContent = 'กำลังพาไปทักแชทเพจ...';
-            toast.classList.add('show');
-
-            // Prepare message for Facebook
-            const message = encodeURIComponent('สวัสดีครับ ลงทะเบียนรับ Rebate Exness\nเลขบัญชี: ' + accountNumber);
-
-            // Redirect to Facebook Messenger
-            setTimeout(() => {
-                window.open('https://m.me/ZabEaForex?text=' + message, '_blank');
-                toast.classList.remove('show');
-                toast.textContent = 'คัดลอกแล้ว!';
-            }, 1000);
-
-            // Reset form
-            accountInput.value = '';
-            termsCheckbox.checked = false;
-            submitBtn.disabled = true;
-        });
     </script>
 </body>
 </html>

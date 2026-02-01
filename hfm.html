@@ -641,7 +641,7 @@
                     <div class="instruction-item">
                         <div class="instruction-number">6</div>
                         <div class="instruction-content">
-                            <p>กลับมาที่หน้านี้และกรอกเลขบัญชี MT4/MT5 เพื่อเชื่อมบัญชีของท่านกับระบบ ZAB Expert Advisor</p>
+                            <p><span class="highlight">แจ้งเลขบัญชี MT4/MT5 มาที่แฟนเพจ</span> เพื่อลงทะเบียนรับ Rebate</p>
                         </div>
                     </div>
                 </div>
@@ -652,8 +652,7 @@
                 <div class="step-header">
                     <div class="step-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M12 6v6l4 2"/>
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                         </svg>
                     </div>
                     <div>
@@ -661,24 +660,25 @@
                     </div>
                 </div>
                 <p class="step-description">
-                    หลังจากส่งคำขอของคุณแล้ว กรุณากรอกรายละเอียด
+                    หลังจากส่งคำขอย้าย IB แล้ว แจ้งเลขบัญชีมาที่แฟนเพจเพื่อลงทะเบียนรับ Rebate
                 </p>
 
-                <form id="accountForm">
-                    <div class="form-group">
-                        <label class="form-label">หมายเลขบัญชีเทรด (MT4/MT5)</label>
-                        <input type="text" class="form-input" id="accountNumber" placeholder="พิมพ์ที่นี่" required>
+                <!-- Contact Box -->
+                <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #dbeafe, #bfdbfe); border-radius: 16px;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #2563eb, #1d4ed8); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="#fff">
+                            <path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.627 0 12-4.974 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/>
+                        </svg>
                     </div>
-
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="termsCheckbox" required>
-                        <label class="checkbox-label" for="termsCheckbox">
-                            ฉันได้อ่าน เข้าใจ และยอมรับ <a href="#">ข้อกำหนดและเงื่อนไข</a>
-                        </label>
-                    </div>
-
-                    <button type="submit" class="submit-btn" id="submitBtn" disabled>ยืนยัน</button>
-                </form>
+                    <h3 style="color: #1e40af; font-size: 1.25rem; margin-bottom: 0.75rem;">แจ้งเลขบัญชี MT4/MT5 ที่แฟนเพจ</h3>
+                    <p style="color: #64748b; margin-bottom: 1.5rem;">ทักแชทมาพร้อมแจ้งเลขบัญชี MT4/MT5 ของคุณ<br>เพื่อลงทะเบียนรับ Rebate</p>
+                    <a href="https://m.me/ZabEaForex" target="_blank" class="submit-btn" style="display: inline-block; text-decoration: none; padding: 1rem 2.5rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 0.5rem;">
+                            <path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.627 0 12-4.974 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/>
+                        </svg>
+                        ทักแชทเพจ
+                    </a>
+                </div>
             </div>
         </div>
     </main>
@@ -724,44 +724,6 @@
             });
         }
 
-        // Form validation
-        const accountInput = document.getElementById('accountNumber');
-        const termsCheckbox = document.getElementById('termsCheckbox');
-        const submitBtn = document.getElementById('submitBtn');
-
-        function validateForm() {
-            const isValid = accountInput.value.trim() !== '' && termsCheckbox.checked;
-            submitBtn.disabled = !isValid;
-        }
-
-        accountInput.addEventListener('input', validateForm);
-        termsCheckbox.addEventListener('change', validateForm);
-
-        // Form submission
-        document.getElementById('accountForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const accountNumber = accountInput.value.trim();
-
-            // Show success message
-            const toast = document.getElementById('toast');
-            toast.textContent = 'กำลังพาไปทักแชทเพจ...';
-            toast.classList.add('show');
-
-            // Prepare message for Facebook
-            const message = encodeURIComponent('สวัสดีครับ ลงทะเบียนรับ Rebate HF Markets\nเลขบัญชี: ' + accountNumber);
-
-            // Redirect to Facebook Messenger
-            setTimeout(() => {
-                window.open('https://m.me/ZabEaForex?text=' + message, '_blank');
-                toast.classList.remove('show');
-                toast.textContent = 'คัดลอกแล้ว!';
-            }, 1000);
-
-            // Reset form
-            accountInput.value = '';
-            termsCheckbox.checked = false;
-            submitBtn.disabled = true;
-        });
     </script>
 </body>
 </html>
