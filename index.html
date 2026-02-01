@@ -202,6 +202,16 @@
             --card-color-2: #ffab00;
         }
 
+        .broker-card.vantage {
+            --card-color-1: #10b981;
+            --card-color-2: #059669;
+        }
+
+        .broker-card.vtmarkets {
+            --card-color-1: #3b82f6;
+            --card-color-2: #1d4ed8;
+        }
+
         .broker-card-content {
             position: relative;
             z-index: 1;
@@ -232,6 +242,18 @@
         .broker-card.exness .broker-logo-box {
             background: linear-gradient(135deg, #ffc400, #ffab00);
             color: #0d0d0d;
+        }
+
+        .broker-card.vantage .broker-logo-box {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            font-size: 0.7rem;
+        }
+
+        .broker-card.vtmarkets .broker-logo-box {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            font-size: 0.8rem;
         }
 
         .broker-name {
@@ -283,6 +305,14 @@
 
         .broker-card.exness .broker-cta {
             color: #ffc400;
+        }
+
+        .broker-card.vantage .broker-cta {
+            color: #34d399;
+        }
+
+        .broker-card.vtmarkets .broker-cta {
+            color: #60a5fa;
         }
 
         .broker-cta svg {
@@ -555,6 +585,76 @@
                     </div>
                 </div>
             </a>
+
+            <!-- Vantage -->
+            <a href="vantage.html" class="broker-card vantage">
+                <div class="broker-card-content">
+                    <div class="broker-logo-box">VANTAGE</div>
+                    <div class="broker-name">Vantage</div>
+                    <p class="broker-desc">โบรกเกอร์ Raw ECN Spread ต่ำ ASIC Regulated</p>
+                    <div class="broker-features">
+                        <div class="broker-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            EA ใช้งานฟรี
+                        </div>
+                        <div class="broker-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Raw ECN Spread
+                        </div>
+                        <div class="broker-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            ASIC Regulated
+                        </div>
+                    </div>
+                    <div class="broker-cta">
+                        ดูขั้นตอนการย้ายบัญชี
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- VT Markets -->
+            <a href="vtmarkets.html" class="broker-card vtmarkets">
+                <div class="broker-card-content">
+                    <div class="broker-logo-box">VT Markets</div>
+                    <div class="broker-name">VT Markets</div>
+                    <p class="broker-desc">โบรกเกอร์ Spread ต่ำ ASIC Regulated</p>
+                    <div class="broker-features">
+                        <div class="broker-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            EA ใช้งานฟรี
+                        </div>
+                        <div class="broker-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Spread ต่ำ
+                        </div>
+                        <div class="broker-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            ASIC Regulated
+                        </div>
+                    </div>
+                    <div class="broker-cta">
+                        ดูขั้นตอนการย้ายบัญชี
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+            </a>
         </div>
     </section>
 
@@ -562,7 +662,7 @@
     <section class="stats-section">
         <div class="stats-grid">
             <div class="stat-item">
-                <h3>2+</h3>
+                <h3>4+</h3>
                 <p>โบรกเกอร์พาร์ทเนอร์</p>
             </div>
             <div class="stat-item">
