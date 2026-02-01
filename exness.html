@@ -865,12 +865,18 @@
 
             // Show success message
             const toast = document.getElementById('toast');
-            toast.textContent = 'ลงทะเบียนสำเร็จ! เลขบัญชี: ' + accountNumber;
+            toast.textContent = 'กำลังพาไปทักแชทเพจ...';
             toast.classList.add('show');
+
+            // Prepare message for Facebook
+            const message = encodeURIComponent('สวัสดีครับ ลงทะเบียนรับ Rebate Exness\nเลขบัญชี: ' + accountNumber);
+
+            // Redirect to Facebook Messenger
             setTimeout(() => {
+                window.open('https://m.me/ZabEaForex?text=' + message, '_blank');
                 toast.classList.remove('show');
                 toast.textContent = 'คัดลอกแล้ว!';
-            }, 3000);
+            }, 1000);
 
             // Reset form
             accountInput.value = '';
