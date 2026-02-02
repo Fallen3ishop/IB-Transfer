@@ -14,16 +14,17 @@
 
         body {
             font-family: 'Prompt', sans-serif;
-            background: linear-gradient(135deg, #f0f7ff 0%, #e8f4fd 50%, #f5f9ff 100%);
+            background: linear-gradient(135deg, #0a1612 0%, #0f1f17 50%, #0a1612 100%);
             min-height: 100vh;
-            color: #1a365d;
+            color: #e2e8f0;
         }
 
         /* Header */
         .header {
-            background: white;
+            background: rgba(10, 22, 18, 0.9);
+            backdrop-filter: blur(10px);
             padding: 1rem 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(34, 197, 94, 0.2);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -32,7 +33,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #2563eb;
+            color: #22c55e;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -41,7 +42,7 @@
         .logo-icon {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            background: linear-gradient(135deg, #22c55e, #15803d);
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -57,14 +58,14 @@
         }
 
         .nav-links a {
-            color: #64748b;
+            color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: #2563eb;
+            color: #22c55e;
         }
 
         /* Main Container */
@@ -79,7 +80,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            color: #2563eb;
+            color: #22c55e;
             text-decoration: none;
             font-weight: 500;
             margin-bottom: 1.5rem;
@@ -92,11 +93,11 @@
 
         /* Hero Section */
         .hero {
-            background: white;
+            background: rgba(15, 31, 23, 0.8);
+            border: 1px solid rgba(34, 197, 94, 0.2);
             border-radius: 20px;
             padding: 2rem;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -113,7 +114,7 @@
         .broker-logo {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, #0ea5e9, #0284c7);
+            background: linear-gradient(135deg, #22c55e, #15803d);
             border-radius: 16px;
             display: flex;
             align-items: center;
@@ -121,16 +122,17 @@
             color: white;
             font-weight: bold;
             font-size: 0.9rem;
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.3);
         }
 
         .broker-info h1 {
             font-size: 1.5rem;
             font-weight: 600;
-            color: #1e40af;
+            color: #fff;
         }
 
         .stars {
-            color: #fbbf24;
+            color: #22c55e;
             font-size: 1.2rem;
             margin-bottom: 0.25rem;
         }
@@ -142,11 +144,12 @@
         .rebate-amount {
             font-size: 3.5rem;
             font-weight: 700;
-            color: #2563eb;
+            color: #22c55e;
+            text-shadow: 0 0 30px rgba(34, 197, 94, 0.5);
         }
 
         .rebate-text {
-            color: #64748b;
+            color: rgba(255, 255, 255, 0.7);
             font-size: 1.1rem;
         }
 
@@ -160,7 +163,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            color: #059669;
+            color: #4ade80;
             font-weight: 500;
         }
 
@@ -177,7 +180,7 @@
 
         .page-title h2 {
             font-size: 1.75rem;
-            color: #1e40af;
+            color: #fff;
             font-weight: 600;
         }
 
@@ -196,10 +199,10 @@
 
         /* Step Card */
         .step-card {
-            background: white;
+            background: rgba(15, 31, 23, 0.8);
+            border: 1px solid rgba(34, 197, 94, 0.2);
             border-radius: 20px;
             padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
 
         .step-header {
@@ -212,7 +215,8 @@
         .step-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            background: rgba(34, 197, 94, 0.15);
+            border: 1px solid rgba(34, 197, 94, 0.3);
             border-radius: 16px;
             display: flex;
             align-items: center;
@@ -222,11 +226,11 @@
         .step-icon svg {
             width: 40px;
             height: 40px;
-            color: #2563eb;
+            color: #22c55e;
         }
 
         .step-number {
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            background: linear-gradient(135deg, #22c55e, #15803d);
             color: white;
             padding: 0.25rem 1rem;
             border-radius: 20px;
@@ -235,7 +239,7 @@
         }
 
         .step-description {
-            color: #64748b;
+            color: rgba(255, 255, 255, 0.7);
             margin-bottom: 1.5rem;
             line-height: 1.6;
         }
@@ -251,16 +255,16 @@
             display: flex;
             gap: 1rem;
             padding: 1rem;
-            background: #f8fafc;
+            background: rgba(10, 22, 18, 0.8);
             border-radius: 12px;
-            border-left: 4px solid #0ea5e9;
+            border-left: 4px solid #22c55e;
             position: relative;
         }
 
         .instruction-number {
             width: 28px;
             height: 28px;
-            background: linear-gradient(135deg, #0ea5e9, #0284c7);
+            background: linear-gradient(135deg, #22c55e, #15803d);
             color: white;
             border-radius: 50%;
             display: flex;
@@ -277,15 +281,16 @@
 
         .instruction-content p {
             line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .instruction-content .highlight {
-            color: #0ea5e9;
+            color: #4ade80;
             font-weight: 600;
         }
 
         .instruction-content .warning {
-            color: #dc2626;
+            color: #fbbf24;
             font-size: 0.9rem;
             margin-top: 0.5rem;
         }
@@ -295,8 +300,8 @@
             right: 1rem;
             top: 50%;
             transform: translateY(-50%);
-            background: #e0f2fe;
-            border: none;
+            background: rgba(34, 197, 94, 0.2);
+            border: 1px solid rgba(34, 197, 94, 0.3);
             width: 36px;
             height: 36px;
             border-radius: 8px;
@@ -308,27 +313,27 @@
         }
 
         .copy-btn:hover {
-            background: #bae6fd;
+            background: rgba(34, 197, 94, 0.3);
         }
 
         .copy-btn svg {
             width: 18px;
             height: 18px;
-            color: #0369a1;
+            color: #4ade80;
         }
 
         .copy-btn.copied {
-            background: #dcfce7;
+            background: rgba(34, 197, 94, 0.4);
         }
 
         .copy-btn.copied svg {
-            color: #16a34a;
+            color: #fff;
         }
 
         /* Email Template Box */
         .email-template {
-            background: #f0f9ff;
-            border: 2px solid #bae6fd;
+            background: rgba(10, 22, 18, 0.9);
+            border: 1px solid rgba(34, 197, 94, 0.3);
             border-radius: 12px;
             padding: 1.5rem;
             margin-top: 1rem;
@@ -339,11 +344,11 @@
             white-space: pre-wrap;
             word-break: break-word;
             line-height: 1.8;
-            color: #334155;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .email-template .ib-number {
-            color: #0ea5e9;
+            color: #4ade80;
             font-weight: 700;
             font-size: 1.1rem;
         }
@@ -353,20 +358,20 @@
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
-            border: 2px solid #86efac;
+            background: rgba(34, 197, 94, 0.15);
+            border: 2px solid rgba(34, 197, 94, 0.4);
             padding: 1rem 1.5rem;
             border-radius: 12px;
             margin: 1rem 0;
         }
 
         .ib-badge .label {
-            color: #166534;
+            color: rgba(255, 255, 255, 0.7);
             font-weight: 500;
         }
 
         .ib-badge .number {
-            color: #15803d;
+            color: #4ade80;
             font-size: 1.5rem;
             font-weight: 700;
         }
@@ -376,12 +381,13 @@
             margin-top: 3rem;
             padding: 2rem;
             text-align: center;
-            color: #64748b;
+            color: rgba(255, 255, 255, 0.5);
             font-size: 0.9rem;
+            border-top: 1px solid rgba(34, 197, 94, 0.1);
         }
 
         .footer a {
-            color: #2563eb;
+            color: #22c55e;
             text-decoration: none;
         }
 
@@ -390,11 +396,11 @@
             position: fixed;
             bottom: 2rem;
             right: 2rem;
-            background: #0ea5e9;
+            background: linear-gradient(135deg, #22c55e, #15803d);
             color: white;
             padding: 1rem 1.5rem;
             border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 40px rgba(34, 197, 94, 0.3);
             transform: translateY(100px);
             opacity: 0;
             transition: all 0.3s ease;
@@ -410,7 +416,7 @@
             display: inline-block;
             width: 100%;
             padding: 1rem 2rem;
-            background: linear-gradient(135deg, #0ea5e9, #0284c7);
+            background: linear-gradient(135deg, #22c55e, #15803d);
             color: white;
             border: none;
             border-radius: 12px;
@@ -425,7 +431,53 @@
 
         .submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.3);
+            box-shadow: 0 8px 30px rgba(34, 197, 94, 0.4);
+        }
+
+        /* Info Box */
+        .info-box {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-box p {
+            color: #4ade80;
+            font-weight: 500;
+        }
+
+        /* Contact Box */
+        .contact-box {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 16px;
+        }
+
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #22c55e, #15803d);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.3);
+        }
+
+        .contact-box h3 {
+            color: #fff;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-box p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
         }
 
         /* Responsive */
@@ -652,8 +704,8 @@ Thank you</pre>
                 </p>
 
                 <!-- Info Box -->
-                <div style="background: #fef3c7; border: 2px solid #fcd34d; border-radius: 12px; padding: 1rem; margin-bottom: 1.5rem;">
-                    <p style="color: #92400e; font-weight: 500;">
+                <div class="info-box">
+                    <p>
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 0.5rem;">
                             <circle cx="12" cy="12" r="10"/>
                             <line x1="12" y1="8" x2="12" y2="12"/>
@@ -664,15 +716,15 @@ Thank you</pre>
                 </div>
 
                 <!-- Contact Box -->
-                <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #e0f2fe, #bae6fd); border-radius: 16px;">
-                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #0ea5e9, #0284c7); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                <div class="contact-box">
+                    <div class="contact-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="#fff">
                             <path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.627 0 12-4.974 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/>
                         </svg>
                     </div>
-                    <h3 style="color: #0c4a6e; font-size: 1.25rem; margin-bottom: 0.75rem;">แจ้งเลขบัญชี MT4/MT5 ที่แฟนเพจ</h3>
-                    <p style="color: #64748b; margin-bottom: 1.5rem;">ทักแชทมาพร้อมแจ้งเลขบัญชี MT4/MT5 ของคุณ<br>เพื่อลงทะเบียนรับ EA ฟรี</p>
-                    <a href="https://m.me/ZabEaForex" target="_blank" class="submit-btn" style="display: inline-block; text-decoration: none; padding: 1rem 2.5rem;">
+                    <h3>แจ้งเลขบัญชี MT4/MT5 ที่แฟนเพจ</h3>
+                    <p>ทักแชทมาพร้อมแจ้งเลขบัญชี MT4/MT5 ของคุณ<br>เพื่อลงทะเบียนรับ EA ฟรี</p>
+                    <a href="https://m.me/ZabEaForex" target="_blank" class="submit-btn" style="display: inline-block; text-decoration: none; padding: 1rem 2.5rem; width: auto;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 0.5rem;">
                             <path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.627 0 12-4.974 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/>
                         </svg>
