@@ -131,7 +131,7 @@
         /* Broker Selection */
         .broker-section {
             padding: 2rem 2rem 6rem;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -152,22 +152,16 @@
 
         .broker-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-
-        .broker-grid .broker-card:last-child:nth-child(odd) {
-            grid-column: 1 / -1;
-            max-width: 50%;
-            justify-self: center;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
         }
 
         /* Broker Card */
         .broker-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            padding: 2rem;
+            border-radius: 20px;
+            padding: 1.5rem;
             text-decoration: none;
             color: inherit;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -228,7 +222,7 @@
             z-index: 1;
             display: flex;
             align-items: flex-start;
-            gap: 1.5rem;
+            gap: 1rem;
         }
 
         .broker-card-info {
@@ -236,15 +230,15 @@
         }
 
         .broker-logo-box {
-            width: 80px;
-            height: 80px;
-            min-width: 80px;
-            border-radius: 20px;
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 0.85rem;
             transition: transform 0.3s;
         }
 
@@ -265,53 +259,53 @@
         .broker-card.vantage .broker-logo-box {
             background: linear-gradient(135deg, #10b981, #059669);
             color: white;
-            font-size: 0.7rem;
+            font-size: 0.55rem;
         }
 
         .broker-card.vtmarkets .broker-logo-box {
             background: linear-gradient(135deg, #3b82f6, #1d4ed8);
             color: white;
-            font-size: 0.75rem;
+            font-size: 0.55rem;
         }
 
         .broker-card.icmarkets .broker-logo-box {
             background: linear-gradient(135deg, #22c55e, #15803d);
             color: white;
-            font-size: 0.65rem;
+            font-size: 0.5rem;
         }
 
         .broker-name {
-            font-size: 1.4rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            margin-bottom: 0.35rem;
+            margin-bottom: 0.25rem;
             color: #fff;
         }
 
         .broker-desc {
             color: rgba(255, 255, 255, 0.6);
-            margin-bottom: 1rem;
-            line-height: 1.6;
-            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+            font-size: 0.8rem;
         }
 
         .broker-features {
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem 1.25rem;
-            margin-bottom: 1rem;
+            flex-direction: column;
+            gap: 0.35rem;
+            margin-bottom: 0.75rem;
         }
 
         .broker-feature {
             display: flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.35rem;
             color: rgba(255, 255, 255, 0.8);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
         .broker-feature svg {
-            width: 16px;
-            height: 16px;
+            width: 14px;
+            height: 14px;
             color: #4ade80;
         }
 
@@ -320,8 +314,8 @@
             align-items: center;
             gap: 0.5rem;
             font-weight: 600;
-            font-size: 0.95rem;
-            padding-top: 1rem;
+            font-size: 0.85rem;
+            padding-top: 0.75rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
@@ -482,6 +476,12 @@
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            .broker-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -497,10 +497,6 @@
 
             .broker-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .broker-grid .broker-card:last-child:nth-child(odd) {
-                max-width: 100%;
             }
 
             .stats-grid {
