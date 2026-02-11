@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HF Markets | ย้ายบัญชีมารับ EA ฟรี กับ ZAB Expert Advisor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            background: linear-gradient(135deg, #1a0a0a 0%, #2d1010 50%, #1a0a0a 100%);
+            min-height: 100vh;
+            color: #e2e8f0;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(26, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-bottom: 1px solid rgba(220, 38, 38, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ef4444;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ef4444;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Back Button */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #ef4444;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-5px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: rgba(45, 16, 16, 0.8);
+            border: 1px solid rgba(220, 38, 38, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .hero-left {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .broker-logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+        }
+
+        .broker-info h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .stars {
+            color: #ef4444;
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .hero-center {
+            text-align: center;
+        }
+
+        .rebate-amount {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #ef4444;
+            text-shadow: 0 0 30px rgba(220, 38, 38, 0.5);
+        }
+
+        .rebate-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+        }
+
+        .hero-right {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #f87171;
+            font-weight: 500;
+        }
+
+        .feature-item svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Page Title */
+        .page-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .page-title h2 {
+            font-size: 1.75rem;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* Steps Container */
+        .steps-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 900px) {
+            .steps-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Step Card */
+        .step-card {
+            background: rgba(45, 16, 16, 0.8);
+            border: 1px solid rgba(220, 38, 38, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(220, 38, 38, 0.15);
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .step-icon svg {
+            width: 40px;
+            height: 40px;
+            color: #ef4444;
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .step-description {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        /* Instruction Items */
+        .instruction-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .instruction-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(26, 10, 10, 0.8);
+            border-radius: 12px;
+            border-left: 4px solid #dc2626;
+            position: relative;
+        }
+
+        .instruction-number {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .instruction-content {
+            flex: 1;
+        }
+
+        .instruction-content p {
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .instruction-content .highlight {
+            color: #f87171;
+            font-weight: 600;
+        }
+
+        .instruction-content .warning {
+            color: #fbbf24;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .copy-btn {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(220, 38, 38, 0.2);
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: rgba(220, 38, 38, 0.3);
+        }
+
+        .copy-btn svg {
+            width: 18px;
+            height: 18px;
+            color: #f87171;
+        }
+
+        .copy-btn.copied {
+            background: rgba(220, 38, 38, 0.4);
+        }
+
+        .copy-btn.copied svg {
+            color: #fff;
+        }
+
+        /* Email Template Box */
+        .email-template {
+            background: rgba(26, 10, 10, 0.9);
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .email-template pre {
+            font-family: inherit;
+            white-space: pre-wrap;
+            word-break: break-word;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .email-template .ib-number {
+            color: #f87171;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* IB Badge */
+        .ib-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(220, 38, 38, 0.15);
+            border: 2px solid rgba(220, 38, 38, 0.4);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+        }
+
+        .ib-badge .label {
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+        }
+
+        .ib-badge .value {
+            color: #f87171;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .submit-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(220, 38, 38, 0.4);
+        }
+
+        /* Info Box */
+        .info-box {
+            background: rgba(220, 38, 38, 0.1);
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-box p {
+            color: #f87171;
+            font-weight: 500;
+        }
+
+        /* Contact Box */
+        .contact-box {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(220, 38, 38, 0.1);
+            border: 1px solid rgba(220, 38, 38, 0.2);
+            border-radius: 16px;
+        }
+
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+        }
+
+        .contact-box h3 {
+            color: #fff;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-box p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 3rem;
+            padding: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(220, 38, 38, 0.1);
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(220, 38, 38, 0.3);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-left {
+                flex-direction: column;
+            }
+
+            .hero-right {
+                align-items: center;
+            }
+
+            .rebate-amount {
+                font-size: 2.5rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .step-card {
+                padding: 1.5rem;
+            }
+
+            .instruction-item {
+                flex-direction: column;
+                padding-right: 1rem;
+            }
+
+            .copy-btn {
+                position: static;
+                transform: none;
+                margin-top: 0.5rem;
+                align-self: flex-end;
+            }
+
+            .ib-badge {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">ZAB</div>
+            ZAB Expert Advisor
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">หน้าแรก</a>
+            <a href="index.html">โบรกเกอร์</a>
+            <a href="https://www.facebook.com/ZabEaForex" target="_blank">เกี่ยวกับเรา</a>
+            <a href="https://m.me/ZabEaForex" target="_blank">ติดต่อเรา</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Back Button -->
+        <a href="index.html" class="back-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            ย้อนกลับ
+        </a>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-left">
+                <div class="broker-logo">HFM</div>
+                <div class="broker-info">
+                    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <h1>HF Markets</h1>
+                </div>
+            </div>
+            <div class="hero-center">
+                <div class="rebate-amount">EA ฟรี</div>
+                <div class="rebate-text">ย้ายบัญชีมาใช้ EA ได้เลย</div>
+            </div>
+            <div class="hero-right">
+                <div class="feature-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    EA ใช้งานฟรี
+                </div>
+                <div class="feature-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    ฝากขั้นต่ำ $10
+                </div>
+                <div class="feature-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    ถอนเงิน 24 ชม.
+                </div>
+            </div>
+        </section>
+
+        <!-- Page Title -->
+        <div class="page-title">
+            <h2>ขั้นตอนการย้าย Partner</h2>
+        </div>
+
+        <!-- Steps -->
+        <div class="steps-container">
+            <!-- Step 1: Send Email -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="step-number">ขั้นตอนที่ 1</span>
+                    </div>
+                </div>
+                <p class="step-description">
+                    ส่งอีเมลขอย้าย Partner ไปที่ HFM Support (ใช้อีเมลที่ลงทะเบียนไว้เท่านั้น)
+                </p>
+
+                <div class="instruction-list">
+                    <div class="instruction-item">
+                        <div class="instruction-number">1</div>
+                        <div class="instruction-content">
+                            <p>ส่งอีเมลไปที่ <span class="highlight">supportth@hfm.com</span></p>
+                        </div>
+                        <button class="copy-btn" onclick="copyText('supportth@hfm.com', this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="instruction-item">
+                        <div class="instruction-number">2</div>
+                        <div class="instruction-content">
+                            <p><span class="highlight">Subject:</span> ต้องการย้าย Partner</p>
+                        </div>
+                        <button class="copy-btn" onclick="copyText('ต้องการย้าย Partner', this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="instruction-item" style="flex-direction: column; align-items: stretch;">
+                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <div class="instruction-number">3</div>
+                            <div class="instruction-content">
+                                <p><span class="highlight">เนื้อหาอีเมล:</span></p>
+                            </div>
+                        </div>
+                        <div class="email-template">
+                            <pre>1. หมายเลขบัญชี MyHF ID : <span class="ib-number">[กรอกหมายเลข MyHF ID ของคุณ]</span>
+2. หมายเลข Partner หรือแคมเปญ ที่ท่านต้องการอยู่ภายใต้ : <span class="ib-number">30439255</span>
+3. เหตุผลที่ต้องการย้าย Partner : <span class="ib-number">[กรอกเหตุผล]</span></pre>
+                        </div>
+                        <button class="copy-btn" style="position: static; align-self: flex-end; margin-top: 1rem;" onclick="copyEmailContent(this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="ib-badge">
+                    <span class="label">Partner Number:</span>
+                    <span class="value">30439255</span>
+                </div>
+
+                <div class="info-box" style="margin-top: 1rem;">
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 0.5rem;">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        * จำเป็นต้องใช้อีเมลที่ลงทะเบียนไว้เท่านั้น *
+                    </p>
+                </div>
+
+                <a href="mailto:supportth@hfm.com?subject=%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A2%E0%B9%89%E0%B8%B2%E0%B8%A2%20Partner&body=1.%20%E0%B8%AB%E0%B8%A1%E0%B8%B2%E0%B8%A2%E0%B9%80%E0%B8%A5%E0%B8%82%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8A%E0%B8%B5%20MyHF%20ID%20%3A%20%5B%E0%B8%81%E0%B8%A3%E0%B8%AD%E0%B8%81%E0%B8%AB%E0%B8%A1%E0%B8%B2%E0%B8%A2%E0%B9%80%E0%B8%A5%E0%B8%82%20MyHF%20ID%5D%0A2.%20%E0%B8%AB%E0%B8%A1%E0%B8%B2%E0%B8%A2%E0%B9%80%E0%B8%A5%E0%B8%82%20Partner%20%E0%B8%AB%E0%B8%A3%E0%B8%B7%E0%B8%AD%E0%B9%81%E0%B8%84%E0%B8%A1%E0%B9%80%E0%B8%9B%E0%B8%8D%20%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%97%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AD%E0%B8%A2%E0%B8%B9%E0%B9%88%E0%B8%A0%E0%B8%B2%E0%B8%A2%E0%B9%83%E0%B8%95%E0%B9%89%20%3A%2030439255%0A3.%20%E0%B9%80%E0%B8%AB%E0%B8%95%E0%B8%B8%E0%B8%9C%E0%B8%A5%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A2%E0%B9%89%E0%B8%B2%E0%B8%A2%20Partner%20%3A" class="submit-btn" style="margin-top: 1rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 0.5rem;">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                    เปิดแอปอีเมล
+                </a>
+            </div>
+
+            <!-- Step 2: Contact Page -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="step-number">ขั้นตอนที่ 2</span>
+                    </div>
+                </div>
+                <p class="step-description">
+                    หลังจากส่งอีเมลแล้ว แจ้งเลขบัญชีมาที่แฟนเพจเพื่อลงทะเบียนรับ EA ฟรี
+                </p>
+
+                <!-- Info Box -->
+                <div class="info-box">
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 0.5rem;">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        ระยะเวลาดำเนินการ 1-3 วันทำการ
+                    </p>
+                </div>
+
+                <!-- Contact Box -->
+                <div class="contact-box">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="#fff">
+                            <path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.627 0 12-4.974 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/>
+                        </svg>
+                    </div>
+                    <h3>แจ้งเลขบัญชี MT4/MT5 ที่แฟนเพจ</h3>
+                    <p>ทักแชทมาพร้อมแจ้งเลขบัญชี MT4/MT5 ของคุณ<br>เพื่อลงทะเบียนรับ EA ฟรี</p>
+                    <a href="https://m.me/ZabEaForex" target="_blank" class="submit-btn" style="display: inline-block; text-decoration: none; padding: 1rem 2.5rem; width: auto;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 0.5rem;">
+                            <path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.627 0 12-4.974 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/>
+                        </svg>
+                        ทักแชทเพจ
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 ZAB Expert Advisor. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">
+            การเทรด CFDs มีความเสี่ยงสูงและอาจทำให้สูญเสียการลงทุนทั้งหมดหรือบางส่วน
+        </p>
+    </footer>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">คัดลอกแล้ว!</div>
+
+    <script>
+        function copyText(text, btn) {
+            navigator.clipboard.writeText(text).then(() => {
+                showCopied(btn);
+            });
+        }
+
+        function copyEmailContent(btn) {
+            const content = `1. หมายเลขบัญชี MyHF ID : [กรอกหมายเลข MyHF ID ของคุณ]
+2. หมายเลข Partner หรือแคมเปญ ที่ท่านต้องการอยู่ภายใต้ : 30439255
+3. เหตุผลที่ต้องการย้าย Partner : [กรอกเหตุผล]`;
+            navigator.clipboard.writeText(content).then(() => {
+                showCopied(btn);
+            });
+        }
+
+        function showCopied(btn) {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2000);
+
+            btn.classList.add('copied');
+            btn.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                </svg>
+            `;
+            setTimeout(() => {
+                btn.classList.remove('copied');
+                btn.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                    </svg>
+                `;
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
